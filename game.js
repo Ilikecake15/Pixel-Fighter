@@ -35,6 +35,7 @@ ctx.textBaseline = "middle";
 
 let bgPulse = 0;
 let bgDirection = 1;
+let pressPulse = 0;
 
 let gameState = "title";
 let menuIndex = 0;
@@ -104,7 +105,10 @@ function drawTitle(){
   ctx.fillText("PIXEL FIGHTERS", canvas.width / 2, canvas.height / 2 - 50);
 
   ctx.font="20px monospace";
+  pressPulse += 0.05;
+  ctx.globalAlpha = 0.5 + Math.sin(pressPulse) * 0.5;
   ctx.fillText("Press Any Key", canvas.width / 2, canvas.height / 2 + 40);
+  ctx.globalAlpha = 1;
 }
 
 function drawMainMenu(){

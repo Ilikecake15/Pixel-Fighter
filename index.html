@@ -1,32 +1,17 @@
-diff --git a/index.html b/index.html
-index 73ea3388930dc3061fb17c00ce41150730d2e4d2..19157bae0e74e4390dacdb12cc000242f3e606a2 100644
---- a/index.html
-+++ b/index.html
-@@ -1,17 +1,21 @@
- <!DOCTYPE html>
--<html>
-+<html lang="en">
- <head>
-+  <meta charset="UTF-8">
-+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Pixel Fighter</title>
-   <link rel="stylesheet" href="style.css">
- </head>
- <body>
--  <canvas id="game"></canvas>
--
--  <div class="ui">
--    <button onclick="setMode('ai')">Play vs AI</button>
--    <button onclick="setMode('local')">2 Player</button>
-+  <div class="game-shell">
-+    <canvas id="game" width="1000" height="500" aria-label="Pixel Fighter arena"></canvas>
-+    <div class="ui" role="group" aria-label="Game mode">
-+      <button type="button" data-mode="ai" onclick="setMode('ai')">Play vs AI</button>
-+      <button type="button" data-mode="local" onclick="setMode('local')">2 Player</button>
-+    </div>
-+    <div id="status" class="status" aria-live="polite"></div>
-   </div>
- 
-   <script src="game.js"></script>
- </body>
- </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pixel Fighter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div class="ui">
+    <button onclick="setMode('ai')">Play vs AI</button>
+    <button onclick="setMode('local')">2 Player</button>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

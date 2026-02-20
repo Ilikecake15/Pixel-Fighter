@@ -29,6 +29,10 @@ const ctx = canvas.getContext("2d");
 canvas.width = 1000;
 canvas.height = 500;
 
+ctx.imageSmoothingEnabled = false;
+ctx.textAlign = "center";
+ctx.textBaseline = "middle";
+
 let bgPulse = 0;
 let bgDirection = 1;
 

@@ -101,10 +101,10 @@ function handleInput(key){
 function drawTitle(){
   ctx.fillStyle="white";
   ctx.font="60px monospace";
-  ctx.fillText("PIXEL FIGHTERS", canvas.width / 2, 200);
+  ctx.fillText("PIXEL FIGHTERS", canvas.width / 2, canvas.height / 2 - 50);
 
   ctx.font="20px monospace";
-  ctx.fillText("Press Any Key", canvas.width / 2, 300);
+  ctx.fillText("Press Any Key", canvas.width / 2, canvas.height / 2 + 40);
 }
 
 function drawMainMenu(){

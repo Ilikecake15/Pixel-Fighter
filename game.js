@@ -1,8 +1,36 @@
+function drawBackground() {
+
+  // Animate pulse
+  bgPulse += 0.01 * bgDirection;
+
+  if (bgPulse > 1 || bgPulse < 0) {
+    bgDirection *= -1;
+  }
+
+  // Create radial spotlight
+  const gradient = ctx.createRadialGradient(
+    canvas.width / 2,
+    canvas.height / 2,
+    100,
+    canvas.width / 2,
+    canvas.height / 2,
+    600
+  );
+
+  gradient.addColorStop(0, `rgba(30, 30, 60, ${0.4 + bgPulse * 0.2})`);
+  gradient.addColorStop(1, "rgba(0, 0, 0, 1)");
+
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
 canvas.width = 1000;
 canvas.height = 500;
+
+let bgPulse = 0;
+let bgDirection = 1;
 
 let gameState = "title";
 let menuIndex = 0;
@@ -125,7 +153,7 @@ function drawFightPlaceholder(){
 }
 
 function update(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.clearRect(0,0,canvas.width,canvas.height); drawBackground();
 
   if(gameState==="title") drawTitle();
   else if(gameState==="mainMenu") drawMainMenu();

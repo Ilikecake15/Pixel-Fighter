@@ -110,17 +110,13 @@ function drawTitle(){
 function drawMainMenu(){
   ctx.fillStyle="white";
   ctx.font="40px monospace";
-  ctx.fillText("MAIN MENU",350,120);
+  ctx.fillText("MAIN MENU", canvas.width / 2, 120);
 
   ctx.font="28px monospace";
 
   menuOptions.forEach((option,i)=>{
-    if(i===menuIndex){
-      ctx.fillStyle="yellow";
-    } else {
-      ctx.fillStyle="white";
-    }
-    ctx.fillText(option,420,200+i*50);
+    ctx.fillStyle = i===menuIndex ? "yellow" : "white";
+    ctx.fillText(option, canvas.width / 2, 200 + i*50);
   });
 }
 
